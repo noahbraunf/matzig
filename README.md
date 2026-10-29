@@ -1,3 +1,7 @@
+**AI NOTE:** This was originally homeworks for my numerical linear algebra class. We implemented various algorithms in a programming language of our choice. Whilst I implemented the algorithms myself, I did use AI to compile them into one library.
+
+---
+
 # Matzig
 
 A Zig module for fixed-size matrices and vectors, QR and least-squares
