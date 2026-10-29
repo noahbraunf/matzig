@@ -1,0 +1,7 @@
+.{
+    .name = .math551_zig,
+    .version = "0.1.0",
+    .fingerprint = 0xffef77f0e6f4d515,
+    .minimum_zig_version = "0.17.0",
+    .paths = .{ "build.zig", "build.zig.zon", "README.md", "src", "tests", "archive" },
+}
