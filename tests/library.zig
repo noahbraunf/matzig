@@ -1,5 +1,5 @@
 const std = @import("std");
-const linalg = @import("math551");
+const linalg = @import("matzig");
 
 test "identity preserves a vector" {
     const matrix = linalg.eye(2);

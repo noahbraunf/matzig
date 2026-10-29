@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) void {
         const sdk = std.mem.trimEnd(u8, b.run(&.{ "xcrun", "--show-sdk-path" }), "\n\r ");
         translate.addSystemFrameworkPath(.{ .cwd_relative = b.fmt("{s}/System/Library/Frameworks/Accelerate.framework/Frameworks", .{sdk}) });
     }
-    const library = b.addModule("math551", .{
+    const library = b.addModule("matzig", .{
         .root_source_file = b.path("src/root.zig"),
         .target = target,
         .optimize = optimize,
@@ -31,7 +31,7 @@ pub fn build(b: *std.Build) void {
         .root_source_file = b.path("tests/library.zig"),
         .target = target,
         .optimize = optimize,
-        .imports = &.{.{ .name = "math551", .module = library }},
+        .imports = &.{.{ .name = "matzig", .module = library }},
     });
     const tests = b.addTest(.{ .root_module = test_module });
     const test_step = b.step("test", "Run library tests");

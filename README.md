@@ -1,4 +1,4 @@
-# MATH 551 linear algebra
+# Matzig
 
 A Zig module for fixed-size matrices and vectors, QR and least-squares
 solvers, SVD and Tikhonov regularization, and eigenvalue routines. It collects
@@ -15,7 +15,7 @@ In your project's `build.zig.zon`, add a local dependency (adjust the path):
 
 ```zig
 .dependencies = .{
-    .math551 = .{ .path = "../zig-project" },
+    .matzig = .{ .path = "../matzig" },
 },
 ```
 
@@ -23,15 +23,15 @@ In `build.zig`, pass the target and optimization options to the dependency and
 add its module to your executable or library module:
 
 ```zig
-const dep = b.dependency("math551", .{ .target = target, .optimize = optimize });
+const dep = b.dependency("matzig", .{ .target = target, .optimize = optimize });
 // After creating your module:
-my_module.addImport("math551", dep.module("math551"));
+my_module.addImport("matzig", dep.module("matzig"));
 ```
 
 Then import and use it in Zig:
 
 ```zig
-const linalg = @import("math551");
+const linalg = @import("matzig");
 const v = linalg.Vector(f64, 2){ .data = .{ 3, -4 } };
 const result = linalg.mmulv(2, 2, linalg.eye(2), v);
 ```
